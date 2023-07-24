@@ -1,0 +1,16 @@
+{
+  "name": "my-blog-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "dumi dev",
+    "build": "dumi build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dumi": "^2.2.1"
+  }
+}
