@@ -1,5 +1,5 @@
 # 项目名
-name: my blog docs
+name: my-blog-docs
 
 # 只有在main分支发生push事件时触发
 on:
@@ -16,18 +16,19 @@ jobs:
       # 拉代码
       - name: Checkout code
         uses: actions/checkout@v1
-
-      # 下载node，我这里指定了15.x，这个版本可随意，高于dumi规定的node版本即可
+      # 下载node，我这里指定了15.x，这个版本可随意，高于 dumi 规定的node版本即可
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-
-      # 打包代码与构建
-       - name: Build and Deploy
-         uses: JamesIves/github-pages-deploy-action@master
-         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
-          BUILD_SCRIPT: npm install && npm run build
+      # 打包代码
+      - name: Build
+        run: |
+          npm install      
+          npm run build
+      # 部署到github
+      - name: Deploy to Github
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: build # 打包的内容放到build分支下
+          folder: dist # 你打包后存放的文件
