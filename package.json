@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dumi": "^2.2.1"
+    "dumi": "1.1.50"
   }
 }
