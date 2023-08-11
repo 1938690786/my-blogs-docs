@@ -1,7 +1,7 @@
 ---
 nav:
-    title: 服务器
-    order: 5
+title: 上传文件
+order: 2
 ---
 
 ## 上传文件
